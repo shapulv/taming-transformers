@@ -28,16 +28,14 @@ model:
 data:
   target: main.DataModuleFromConfig
   params:
-    batch_size: 5
+    batch_size: 3
     num_workers: 8
     train:
-      target: taming.data.custom.CustomTrain
+      target: taming.data.faceshq.CelebAHQTrain
       params:
-        training_images_list_file: some/training.txt
         size: 256
     validation:
-      target: taming.data.custom.CustomTest
+      target: taming.data.faceshq.CelebAHQValidation
       params:
-        test_images_list_file: some/test.txt
         size: 256
 
